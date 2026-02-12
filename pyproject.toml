@@ -1,0 +1,30 @@
+[project]
+name = "showcase-portfolio"
+version = "0.1.0"
+description = "Portfolio aggregation engine for the ORGAN creative system — collects, organizes, and renders creative works across all organs"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "ORGAN System" }]
+keywords = ["portfolio", "gallery", "creative", "aggregation"]
+
+dependencies = [
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+    "jinja2>=3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
