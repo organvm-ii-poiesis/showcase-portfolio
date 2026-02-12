@@ -1,0 +1,33 @@
+{
+  "gallery_name": "ORGAN System Showcase",
+  "description": "Curated portfolio of works from the eight-organ creative-institutional system",
+  "works": [
+    {
+      "title": "Recursive Engine",
+      "description": "Self-modifying generative entity system exploring computational recursion",
+      "medium": "software",
+      "organ": "organvm-i-theoria",
+      "repo": "recursive-engine--generative-entity",
+      "tags": ["recursion", "generative", "theory"],
+      "featured": true
+    },
+    {
+      "title": "Metasystem Master",
+      "description": "Interactive performance system bridging audience participation and generative art",
+      "medium": "interactive",
+      "organ": "organvm-ii-poiesis",
+      "repo": "metasystem-master",
+      "tags": ["performance", "interactive", "audience"],
+      "featured": true
+    },
+    {
+      "title": "Narratological Algorithmic Lenses",
+      "description": "Computational narratology framework for analyzing story structures",
+      "medium": "software",
+      "organ": "organvm-i-theoria",
+      "repo": "narratological-algorithmic-lenses",
+      "tags": ["narratology", "algorithms", "analysis"],
+      "featured": true
+    }
+  ]
+}
