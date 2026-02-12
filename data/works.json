@@ -1,32 +1,95 @@
 {
-  "gallery_name": "ORGAN System Showcase",
-  "description": "Curated portfolio of works from the eight-organ creative-institutional system",
+  "gallery_name": "ORGAN II — Poiesis Showcase Portfolio",
+  "description": "Curated portfolio of creative works from the eight-organ creative-institutional system, with emphasis on ORGAN-II (Poiesis) generative art, performance, and interactive media",
   "works": [
     {
-      "title": "Recursive Engine",
-      "description": "Self-modifying generative entity system exploring computational recursion",
-      "medium": "software",
-      "organ": "organvm-i-theoria",
-      "repo": "recursive-engine--generative-entity",
-      "tags": ["recursion", "generative", "theory"],
+      "title": "Metasystem Master",
+      "description": "Interactive performance system bridging audience participation and generative art. ORGAN-II flagship that orchestrates real-time audiovisual synthesis through audience-responsive feedback loops, transforming live performance into collaborative generative composition.",
+      "medium": "mixed-media",
+      "organ": "organvm-ii-poiesis",
+      "repo": "metasystem-master",
+      "tags": ["performance", "interactive", "generative", "audience-participation", "audiovisual", "flagship"],
       "featured": true
     },
     {
-      "title": "Metasystem Master",
-      "description": "Interactive performance system bridging audience participation and generative art",
+      "title": "A MAVS OLEVM",
+      "description": "Immersive audiovisual environment exploring recursive sensory feedback. ORGAN-II flagship that generates evolving sonic and visual landscapes through layered algorithmic processes, creating an environment where observer and observed merge into a single generative loop.",
       "medium": "interactive",
       "organ": "organvm-ii-poiesis",
-      "repo": "metasystem-master",
-      "tags": ["performance", "interactive", "audience"],
+      "repo": "a-mavs-olevm",
+      "tags": ["audiovisual", "immersive", "environment", "recursive", "generative", "flagship"],
+      "featured": true
+    },
+    {
+      "title": "Example Generative Music",
+      "description": "Generative music system applying recursive compositional principles to algorithmic sound creation. Produces evolving musical structures that balance deterministic form with emergent variation, demonstrating how self-similar patterns generate coherent musical narratives.",
+      "medium": "musical",
+      "organ": "organvm-ii-poiesis",
+      "repo": "example-generative-music",
+      "tags": ["generative-music", "algorithmic-composition", "recursion", "sound-art"],
+      "featured": false
+    },
+    {
+      "title": "Performance Documentation System",
+      "description": "Infrastructure for capturing, archiving, and re-presenting live performance works. Provides structured documentation workflows that treat the documentation artifact itself as a creative output, bridging ephemeral performance and persistent record.",
+      "medium": "performance",
+      "organ": "organvm-ii-poiesis",
+      "repo": "performance-documentation-system",
+      "tags": ["documentation", "performance", "archive", "infrastructure"],
+      "featured": false
+    },
+    {
+      "title": "Showcase Portfolio",
+      "description": "Meta-recursive portfolio aggregation engine — this very system that collects, organizes, and renders creative works across all eight organs. A software artwork whose subject is the act of curating artworks, embodying the self-referential architecture of the ORGAN system.",
+      "medium": "software",
+      "organ": "organvm-ii-poiesis",
+      "repo": "showcase-portfolio",
+      "tags": ["meta-recursive", "portfolio", "aggregation", "self-referential", "software-art"],
+      "featured": true
+    },
+    {
+      "title": "Art from Auto-Revision Epistemic Engine",
+      "description": "Interactive artwork that treats governance and revision processes as artistic material. Visualizes how institutional knowledge evolves through iterative self-correction, rendering organizational epistemology as dynamic generative art.",
+      "medium": "interactive",
+      "organ": "organvm-ii-poiesis",
+      "repo": "art-from--auto-revision-epistemic-engine",
+      "tags": ["governance-as-art", "epistemology", "interactive", "visualization", "revision"],
+      "featured": false
+    },
+    {
+      "title": "Art from Narratological Algorithmic Lenses",
+      "description": "Interactive narrative visualization that applies computational narratology to reveal hidden story structures. Transforms abstract narrative theory into tangible visual and interactive experiences, letting users explore the architecture of storytelling itself.",
+      "medium": "interactive",
+      "organ": "organvm-ii-poiesis",
+      "repo": "art-from--narratological-algorithmic-lenses",
+      "tags": ["narratology", "visualization", "interactive", "story-structure", "computational"],
+      "featured": false
+    },
+    {
+      "title": "Artist Statement Generator",
+      "description": "AI-assisted tool for generating contextual artist statements that reflect the theoretical grounding of each ORGAN-II work. Combines natural language generation with domain-specific art vocabulary to produce statements that are themselves a form of literary art.",
+      "medium": "literary",
+      "organ": "organvm-ii-poiesis",
+      "repo": "artist-statement-generator",
+      "tags": ["AI-assisted", "artist-statement", "literary", "natural-language-generation"],
+      "featured": false
+    },
+    {
+      "title": "Recursive Engine",
+      "description": "Self-modifying generative entity system exploring computational recursion as both methodology and metaphor. ORGAN-I flagship that serves as the theoretical foundation underpinning all generative processes across the ORGAN system.",
+      "medium": "software",
+      "organ": "organvm-i-theoria",
+      "repo": "recursive-engine--generative-entity",
+      "tags": ["recursion", "generative", "theory", "self-modification", "flagship"],
       "featured": true
     },
     {
       "title": "Narratological Algorithmic Lenses",
-      "description": "Computational narratology framework for analyzing story structures",
+      "description": "Computational narratology framework for analyzing story structures through algorithmic decomposition. Provides the theoretical apparatus that ORGAN-II artworks translate into experiential form.",
       "medium": "software",
       "organ": "organvm-i-theoria",
       "repo": "narratological-algorithmic-lenses",
-      "tags": ["narratology", "algorithms", "analysis"],
+      "tags": ["narratology", "algorithms", "analysis", "theory", "flagship"],
       "featured": true
     }
   ]
