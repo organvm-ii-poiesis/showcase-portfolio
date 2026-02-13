@@ -1,0 +1,406 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SketchContainer from '../components/sketches/SketchContainer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const organGroups = [
+  {
+    organ: 'ORGAN I',
+    name: 'Theoria',
+    domain: 'Theory & Epistemology',
+    projects: [
+      {
+        title: 'Narratological Algorithmic Lenses',
+        tagline: 'Formalized narrative analysis as executable theory',
+        description: 'A monorepo for computational narrative analysis — Python core, CLI, FastAPI service, and React frontend turning literary frameworks (Propp, Greimas, Genette) into executable algorithms.',
+        href: `${base}projects/narratological-lenses/`,
+        tags: ['Theory', 'Narrative'],
+        number: 1,
+      },
+      {
+        title: 'My Knowledge Base',
+        tagline: 'Turning AI conversations into durable, interconnected knowledge',
+        description: 'Epistemological infrastructure converting AI conversations into searchable, atomized knowledge — 9 source adapters, 3-modal search (FTS + vector + RRF), LLM intelligence extraction. 200+ tests.',
+        href: `${base}projects/knowledge-base/`,
+        tags: ['Theory', 'Knowledge'],
+        number: 2,
+      },
+      {
+        title: 'Org Architecture & Community Health',
+        tagline: 'One repo to govern them all',
+        description: 'Organization-wide .github infrastructure — CI/CD workflows, security scanning, AI agent framework, and community health files inherited by every repo in the org.',
+        href: `${base}projects/org-architecture/`,
+        tags: ['Systems', 'Community'],
+        number: 3,
+      },
+      {
+        title: 'LingFrame — Linguistic Atomization',
+        tagline: 'Computational rhetoric across 46 works and 15 languages',
+        description: 'A platform decomposing text into hierarchical atomic units with six analysis modules, spanning 46 canonical works across 12 literary traditions. Python, 142 tests.',
+        href: `${base}projects/linguistic-atomization/`,
+        tags: ['Theory', 'Language'],
+        number: 4,
+      },
+      {
+        title: 'Recursive Engine (RE:GE)',
+        tagline: 'A symbolic operating system for myth and narrative',
+        description: 'A pure Python engine where myths, identities, rituals, and recursive structures are first-class computational objects. 21 organ handlers, a ritual syntax DSL, and 1,254 tests.',
+        href: `${base}projects/recursive-engine/`,
+        tags: ['Theory', 'Python'],
+        number: 5,
+      },
+    ],
+  },
+  {
+    organ: 'ORGAN II',
+    name: 'Poiesis',
+    domain: 'Generative Art & Performance',
+    projects: [
+      {
+        title: 'Metasystem Master',
+        tagline: 'Collective audience input shaping live art in real time',
+        description: 'A real-time audience-participatory performance engine where weighted consensus algorithms transform crowd decisions into artistic direction — while performers retain expressive override authority.',
+        href: `${base}projects/metasystem-master/`,
+        tags: ['Art', 'Architecture'],
+        number: 6,
+      },
+      {
+        title: 'AI Council Coliseum',
+        tagline: 'Multi-agent deliberation with gamified governance',
+        description: 'A platform where AI agents debate, audiences vote, and achievements track engagement. FastAPI backend + Next.js frontend with agent lifecycle, voting sessions, and user progression.',
+        href: `${base}projects/ai-council/`,
+        tags: ['Art', 'AI'],
+        number: 7,
+      },
+      {
+        title: 'Generative Music System',
+        tagline: 'From recursive theory to real-time sound',
+        description: 'Translates recursive narrative principles into live generative music — recursion as counterpoint, identity transformations as harmonic movement. Three-layer architecture from symbolic engine to performance system.',
+        href: `${base}projects/generative-music/`,
+        tags: ['Art', 'Audio'],
+        number: 8,
+      },
+    ],
+  },
+  {
+    organ: 'ORGAN III',
+    name: 'Ergon',
+    domain: 'Commerce & Products',
+    projects: [
+      {
+        title: 'in-midst-my-life',
+        tagline: 'The employer becomes the interviewee',
+        description: 'An interactive CV system that inverts the hiring dynamic — employers answer questions, the system assembles a role-curated profile from 16 identity masks. Full-stack SaaS with W3C Verifiable Credentials.',
+        href: `${base}projects/life-my-midst-in/`,
+        tags: ['Commerce', 'Product'],
+        number: 9,
+      },
+      {
+        title: 'TurfSynth AR',
+        tagline: 'Your neighborhood procedurally generates the game',
+        description: 'A location-based AR game where real-world geography — streets, landmarks, density — procedurally generates the game world around you. TypeScript monorepo with geospatial data processing.',
+        href: `${base}projects/block-warfare/`,
+        tags: ['Commerce', 'Game'],
+        number: 10,
+      },
+      {
+        title: 'Your Fit Tailored',
+        tagline: 'Circular apparel subscription — zero cognitive load',
+        description: 'A specification-driven seed for a circular apparel platform. Weekly curated boxes, closed-loop logistics, compounding fit confidence. The subscription is the product.',
+        href: `${base}projects/your-fit-tailored/`,
+        tags: ['Commerce', 'Product'],
+        number: 11,
+      },
+      {
+        title: 'The Actual News',
+        tagline: 'News as a public service — verifiable by design',
+        description: 'A verifiable news ledger where every story ships with atomic claims, content-addressed evidence graphs, and deterministic publish gates. Five microservices, 10 protocol invariants, 7 conformance tests.',
+        href: `${base}projects/the-actual-news/`,
+        tags: ['Commerce', 'Media'],
+        number: 12,
+      },
+      {
+        title: 'Aetheria Classroom RPG',
+        tagline: 'Theory → Art → Commerce: an educational RPG',
+        description: 'A gamified classroom platform that traveled the full I→II→III pipeline — from pedagogical theory to game design to revenue product. Honest post-mortem included.',
+        href: `${base}projects/aetheria-rpg/`,
+        tags: ['Product', 'Education'],
+        number: 13,
+      },
+    ],
+  },
+  {
+    organ: 'ORGAN IV',
+    name: 'Taxis',
+    domain: 'Orchestration & Governance',
+    projects: [
+      {
+        title: 'Agentic Titan',
+        tagline: 'Multi-agent orchestration from laptop to production',
+        description: 'A polymorphic, model-agnostic multi-agent framework — 9 topology patterns, 22 agent archetypes, production safety infrastructure. Python 3.11+, 1,312 tests.',
+        href: `${base}projects/agentic-titan/`,
+        tags: ['Orchestration', 'AI'],
+        number: 14,
+      },
+      {
+        title: 'Orchestration Hub',
+        tagline: 'The central nervous system of eight GitHub organizations',
+        description: 'Machine-readable JSON registry serving as single source of truth for 81 repositories — validation scripts, governance rules, dependency graph enforcement, and promotion state machines.',
+        href: `${base}projects/orchestration-hub/`,
+        tags: ['Governance', 'Systems'],
+        number: 15,
+      },
+    ],
+  },
+  {
+    organ: 'ORGAN V',
+    name: 'Logos',
+    domain: 'Public Process & Essays',
+    projects: [
+      {
+        title: 'Public Process',
+        tagline: '21 essays on building creative infrastructure in public',
+        description: '~88,000 words of long-form essays documenting architectural decisions, sprint narratives, and methodology — transparency as design choice, process documentation as portfolio evidence.',
+        href: `${base}projects/public-process/`,
+        tags: ['Essays', 'Transparency'],
+        number: 16,
+      },
+      {
+        title: 'AI-Conductor Model',
+        tagline: 'Human-AI co-creation as artistic practice',
+        description: 'The methodology that produced ~339K words: AI generates volume, human directs and refines. Explicit roles, quality gates, token economics, and honest attribution.',
+        href: `${base}projects/ai-conductor/`,
+        tags: ['AI', 'Methodology'],
+        number: 17,
+      },
+    ],
+  },
+  {
+    organ: 'ORGAN VI',
+    name: 'Koinonia',
+    domain: 'Community & Collaboration',
+    projects: [
+      {
+        title: 'Community Infrastructure',
+        tagline: 'Intellectual salons and structured reading groups',
+        description: 'The relational substrate of the eight-organ system — facilitated salons, reading group curricula, and collaborative sense-making sessions that connect theory to practice.',
+        href: `${base}projects/community-infrastructure/`,
+        tags: ['Community', 'Education'],
+        number: 18,
+      },
+    ],
+  },
+  {
+    organ: 'ORGAN VII',
+    name: 'Kerygma',
+    domain: 'Distribution & Amplification',
+    projects: [
+      {
+        title: 'Distribution Strategy',
+        tagline: 'POSSE-first content distribution across the system',
+        description: 'Audience segmentation, channel strategy, and systematic content adaptation — distribution as a first-class architectural concern with its own organ and governance.',
+        href: `${base}projects/distribution-strategy/`,
+        tags: ['Marketing', 'Distribution'],
+        number: 19,
+      },
+    ],
+  },
+  {
+    organ: 'Meta',
+    name: '',
+    domain: 'Cross-System Integration',
+    projects: [
+      {
+        title: 'ORGAN Corpus Testamentum',
+        tagline: 'Governance as creative infrastructure',
+        description: 'The orchestration system coordinating 81 repositories across 8 GitHub organizations — dependency rules, promotion state machines, automated audits, and ~339K words of documentation.',
+        href: `${base}projects/eight-organ-system/`,
+        tags: ['Systems', 'Governance'],
+        number: 20,
+      },
+    ],
+  },
+];
+---
+
+<Layout title="4444j — Creative Technologist">
+  <Header />
+  <main>
+    <section class="hero">
+      <div class="container hero__split">
+        <div class="hero__text">
+          <p class="hero__label">Creative Technologist</p>
+          <h1 class="hero__title">I build autonomous creative systems and treat their governance as an artistic medium.</h1>
+          <p class="hero__sub">Coordinating theory, generative art, commerce, and community across an eight-organ infrastructure — 81 repositories, 8 organizations, ~339K words of public documentation.</p>
+        </div>
+        <div class="hero__canvas">
+          <SketchContainer
+            sketchId="hero"
+            height="480px"
+            mobileHeight="320px"
+            ariaLabel="Interactive visualization: eight organ nodes breathing in coordinated rhythm, connected by flowing particle filaments. Hover to illuminate individual organs. Click to send pulses."
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <h2 class="section__heading">Projects</h2>
+        {organGroups.map(group => (
+          <div class="organ-group">
+            <h3 class="organ-group__heading">
+              {group.organ}{group.name && <span class="organ-group__name"> — {group.name}</span>}
+              <span class="organ-group__domain">{group.domain}</span>
+            </h3>
+            <div class="project-grid">
+              {group.projects.map(project => (
+                <ProjectCard {...project} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="section stats-section">
+      <div class="container">
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="stat-value">81</div>
+            <div class="stat-label">Repositories</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">8</div>
+            <div class="stat-label">Organizations</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">339K</div>
+            <div class="stat-label">Words Documented</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">21</div>
+            <div class="stat-label">Published Essays</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">70+</div>
+            <div class="stat-label">CI/CD Workflows</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  import '../components/sketches/sketch-loader';
+</script>
+
+<style>
+  .hero {
+    padding: var(--space-4xl) 0 var(--space-3xl);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .hero__text {
+    min-width: 0;
+  }
+
+  .hero__canvas {
+    min-width: 0;
+  }
+
+  .hero__label {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__title {
+    max-width: 20ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__sub {
+    font-size: 1.1rem;
+    max-width: 55ch;
+    line-height: 1.7;
+  }
+
+  .section__heading {
+    margin-bottom: var(--space-2xl);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .organ-group {
+    margin-bottom: var(--space-3xl);
+  }
+
+  .organ-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .organ-group__heading {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .organ-group__name {
+    font-weight: 400;
+    color: var(--text-primary);
+  }
+
+  .organ-group__domain {
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+
+  .stats-section {
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .hero__split {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__canvas {
+      order: 2;
+    }
+
+    .hero__text {
+      order: 1;
+    }
+  }
+</style>
