@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<Layout title="About — Anthony James Padavano" description="Creative technologist building autonomous creative systems. Professional bio, practice statement, and contact information.">
+  <Header />
+  <main>
+    <article class="about h-card">
+      <div class="container container--narrow">
+        <h1>About</h1>
+        <span class="sr-only p-name">Anthony James Padavano</span>
+        <span class="sr-only p-job-title">Creative Technologist</span>
+        <a class="sr-only u-url" href="https://4444j99.github.io/portfolio/">Portfolio</a>
+        <span class="sr-only p-locality">New York City</span>
+
+        <section class="about__bio prose">
+          <p>
+            I'm Anthony James Padavano — a creative technologist and systems architect based in New York City. I build autonomous creative systems and treat their governance as an artistic medium.
+          </p>
+          <p>
+            My work sits at the intersection of software engineering, generative art, and institutional design. Over the past 10+ years I've moved across multimedia production, digital marketing, higher education, and — most recently — the design of large-scale creative infrastructure. The throughline is a belief that how you organize and govern creative work is as important as the work itself.
+          </p>
+          <p>
+            I hold an MFA in Creative Writing from Florida Atlantic University and a BA in English Literature from CUNY. I'm a Meta-certified Full-Stack Developer and hold Google Professional Certificates in UX Design, Digital Marketing, and Project Management. These days I spend most of my time writing Python and TypeScript, orchestrating multi-agent AI systems, and building the governance infrastructure that lets creative projects sustain themselves.
+          </p>
+        </section>
+
+        <hr />
+
+        <section class="about__system prose">
+          <h2>The Eight-Organ System</h2>
+          <p>
+            Most creative portfolios are flat — a list of projects with screenshots. Mine is an operating system.
+          </p>
+          <p>
+            The <a href="https://github.com/meta-organvm" target="_blank" rel="noopener noreferrer">eight-organ system</a> is a coordinated infrastructure spanning 81 repositories across 8 GitHub organizations, with ~339K words of public documentation. Each "organ" handles a different function:
+          </p>
+          <div class="about__organ-map">
+            <div class="organ-row"><span class="organ-num">I</span> <strong>Theoria</strong> — Ontology, recursion, epistemic engines</div>
+            <div class="organ-row"><span class="organ-num">II</span> <strong>Poiesis</strong> — Generative art, performance, experiential systems</div>
+            <div class="organ-row"><span class="organ-num">III</span> <strong>Ergon</strong> — Products, platforms, deployed commerce</div>
+            <div class="organ-row"><span class="organ-num">IV</span> <strong>Taxis</strong> — Orchestration, governance, agent swarms</div>
+            <div class="organ-row"><span class="organ-num">V</span> <strong>Logos</strong> — Essays, public process, building in public</div>
+            <div class="organ-row"><span class="organ-num">VI</span> <strong>Koinonia</strong> — Community, salons, collaborative infrastructure</div>
+            <div class="organ-row"><span class="organ-num">VII</span> <strong>Kerygma</strong> — Distribution, amplification, audience</div>
+            <div class="organ-row"><span class="organ-num">∞</span> <strong>Meta</strong> — The system that holds the system</div>
+          </div>
+          <p>
+            Work flows through a pipeline: theory becomes art, art becomes product, product gets governed, governance gets documented, documentation builds community, community amplifies. The meta-organ — with its machine-readable registry, dependency validation, and promotion state machines — is itself the primary artifact.
+          </p>
+          <p>
+            This isn't project-based art. It's infrastructure-as-practice. The choice of how work moves between organs is as important as any individual output. You can read more in the <a href="https://organvm-v-logos.github.io/public-process/" target="_blank" rel="noopener noreferrer">essays on building in public</a>.
+          </p>
+        </section>
+
+        <hr />
+
+        <section class="about__practice prose">
+          <h2>Practice</h2>
+          <p>
+            <strong>Discipline:</strong> Systems Art / Creative Technology / Governance Design
+          </p>
+          <p>
+            <strong>Medium:</strong> Software infrastructure, governance protocols, public documentation, generative systems
+          </p>
+          <p>
+            <strong>Influences:</strong> Julian Oliver's critical engineering, Nicky Case's explorable explanations, Hundred Rabbits' sustainable tools — practitioners who treat infrastructure, protocols, and documentation as primary creative outputs.
+          </p>
+        </section>
+
+        <hr />
+
+        <section class="about__contact prose">
+          <h2>Get in Touch</h2>
+          <p>
+            I'm open to collaboration, consulting, and full-time opportunities in creative technology, systems architecture, and AI/ML engineering.
+          </p>
+          <ul>
+            <li><a href="mailto:padavano.anthony@gmail.com">padavano.anthony@gmail.com</a></li>
+            <li><a href="https://github.com/meta-organvm" target="_blank" rel="noopener noreferrer">GitHub — meta-organvm</a> (eight-organ system hub)</li>
+            <li><a href="https://github.com/4444j99" target="_blank" rel="me noopener noreferrer">GitHub — @4444j99</a> (personal)</li>
+            <li><a href={`${base}resume/`}>Resume</a></li>
+          </ul>
+        </section>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .about {
+    padding: var(--space-3xl) 0;
+  }
+
+  .about h1 {
+    margin-bottom: var(--space-3xl);
+  }
+
+  .about__bio,
+  .about__system,
+  .about__practice,
+  .about__contact {
+    margin-bottom: var(--space-xl);
+  }
+
+  .about__organ-map {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    line-height: 2;
+    margin: var(--space-lg) 0;
+    padding: var(--space-lg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .organ-row {
+    color: var(--text-secondary);
+  }
+
+  .organ-num {
+    display: inline-block;
+    width: 2.5em;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .organ-row strong {
+    color: var(--text-primary);
+  }
+
+  .about__contact ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .about__contact li {
+    margin-bottom: var(--space-sm);
+  }
+
+  .about__contact a {
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+  }
+
+  .about__contact a:hover {
+    color: var(--accent);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
