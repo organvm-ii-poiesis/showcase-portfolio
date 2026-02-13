@@ -1,0 +1,59 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__links">
+      <a href="https://github.com/meta-organvm" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer__sep" aria-hidden="true">/</span>
+      <a href={`${base}resume/`}>Resume</a>
+      <span class="footer__sep" aria-hidden="true">/</span>
+      <a href={`${base}about/`}>About</a>
+      <span class="footer__sep" aria-hidden="true">/</span>
+      <a href="mailto:padavano.anthony@gmail.com">Contact</a>
+    </div>
+    <p class="footer__copy">&copy; {year} Anthony James Padavano · Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a></p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: var(--space-2xl) 0;
+    margin-top: var(--space-4xl);
+  }
+
+  .footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .footer__links a {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .footer__links a:hover {
+    color: var(--text-primary);
+  }
+
+  .footer__sep {
+    color: var(--border);
+    font-size: 0.8rem;
+  }
+
+  .footer__copy {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+</style>
