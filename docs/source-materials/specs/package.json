@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.17.1",
+    "mermaid": "11.12.2",
+    "p5": "2.2.1"
+  },
+  "devDependencies": {
+    "@types/p5": "1.7.7"
+  }
+}
