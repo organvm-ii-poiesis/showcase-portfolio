@@ -1,0 +1,8 @@
+schema_version: '1.0'
+repo: showcase-portfolio
+organ: II
+display_name: Living portfolio aggregating all ORGAN-II generative art, interactive
+  installations, and AI-human collaborative works
+delivery:
+- platform: web_app
+  status: not_started
